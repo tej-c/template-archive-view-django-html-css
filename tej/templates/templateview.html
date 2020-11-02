@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template View</title>
+    <style>
+        .dropbtn {
+            background-color:whitesmoke;
+            color: rgb(255, 142, 160);
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+          }
+          
+          .dropdown {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+          }
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          
+          .dropdown-content a {
+            color: rgb(255, 142, 160);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+          
+          .dropdown-content a:hover {background-color: #ebebeb}
+          
+          .dropdown:hover .dropdown-content {
+            display: block;
+          }
+          
+          .dropdown:hover .dropbtn {
+            background-color: #ebebeb;
+          }
+          h2{
+            text-decoration: underline;
+          }
+    </style>      
+
+</head>
+<body style="background-color: pink;">
+    
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+            {% for article in latest_articles %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ article.title }}</h2>
+                    <p  class="card-text text-muted h6"><b>penned down by: </b><em>{{ article.author }}</em> <b>| </b><b>created_on: </b><em>{{ article.created_on}}</em><b>| </b><b>updated_on: </b> <em>{{ article.updated_on}}</em> </p>
+                    <p  class="card-text text-muted h6"><b>content:</b></p>
+                    <p class="card-text">{{article.content|slice:":200" }}</p>
+                    <hr>
+                </div>
+            </div>
+            {% endfor %}
+        
+</div>
+</div>
+    <div class="dropdown">
+        <button class="dropbtn">home</button>
+        <div class="dropdown-content">
+        <a href="http://127.0.0.1:8000">go home</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">archive view</button>
+        <div class="dropdown-content">
+        <a href="http://127.0.0.1:8000/2020">2020 articles</a>
+        <a href="http://127.0.0.1:8000/2019">2019 articles</a>
+        </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+first create the project and create an app.
+
+then in app create urls.py file and templates folder.
+
+import those app urls.py in root urls.py file of the project.
+
+now register templates and app in settings file.
+
+create neccessary html files in templates folder.
+
+Now create models in models.py file of app.
+
+Now import and register those models in admin.py file of app.
+
+create views in views.py file of app by importing models.
+
+Now create a super user using CLI and create an account.
+we can add in the data fields directly from admin site using this account.
+
+Now create urls in the app's urls.py file name them as you like.
+
+Use .as_view() method during creation of urls which routes those urls 
+to the respective view.
+
+we have to use that method because we are using class based views with 
+inheriting yeararchiveview and templateview as parent classes.
+
+next in html files use jinja pattern to retrieve the desired info from the 
+lists created in the class based views.
+
+in models class whatever we add those are the data base fields.
+
+Django gives you an automatically-generated database-access API.
+
+now run the server and see the project and don't forget to add some info
+in the fields of the data base.
+
+django's models are nice abstraction on top of relational database tables
+
+most web apps end up having some sort of CRUD where you manipulate objects
+or graphs of objects saved in data base
+
+so an object oriented approach is nice work here.
+
+in addition, many features in django(libraries of django) are built around models
+(such as admin, modelforms, serialization, etc.).
+
+talking about class based views, they allow code reusability
+can be inherited by another CBV and modified for a different use case.
+
+DRY- helps to reduce code duplication.
+
+code extendability, code structuring are some of the other uses of CBVs. 
+
+
+
+
+
